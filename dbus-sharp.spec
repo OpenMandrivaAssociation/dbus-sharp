@@ -46,11 +46,11 @@ them to talk to one another in a peer-to-peer configuration.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std pkgconfigdir=%_datadir/pkgconfig
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
