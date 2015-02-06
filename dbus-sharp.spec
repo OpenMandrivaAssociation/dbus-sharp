@@ -1,6 +1,6 @@
 %define name dbus-sharp
 %define version 0.7.0
-%define release %mkrel 1
+%define release 2
 %define pkgname %name-1.0
 
 Summary: Managed D-Bus implementation
