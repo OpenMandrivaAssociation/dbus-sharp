@@ -1,17 +1,13 @@
-%define name dbus-sharp
-%define version 0.7.0
-%define release 2
-%define pkgname %name-1.0
+%define pkgname %name-2.0
 
 Summary: Managed D-Bus implementation
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://github.com/downloads/mono/%name/%{name}-%{version}.tar.gz
+Name: dbus-sharp
+Version: 0.8.1
+Release: 1
+Source0: https://github.com/mono/dbus-sharp/releases/download/v%{version}/dbus-sharp-%{version}.tar.gz
 License: MIT
 Group: System/Libraries
-Url: http://mono.github.com/dbus-sharp/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url: https://github.com/mono/dbus-sharp
 BuildRequires: mono-devel
 BuildArch: noarch
 
@@ -39,7 +35,8 @@ applications interface with the system event bus as well as allowing
 them to talk to one another in a peer-to-peer configuration.
 
 %prep
-%setup -q -n %name-%version
+%autosetup -p1
+sed -i -e 's,gmcs,mcs,g' configure.ac configure
 
 %build
 ./configure --prefix=%_prefix
