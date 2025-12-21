@@ -8,6 +8,11 @@ Source0: https://github.com/mono/dbus-sharp/releases/download/v%{version}/dbus-s
 License: MIT
 Group: System/Libraries
 Url: https://github.com/mono/dbus-sharp
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: mono-devel
 BuildArch: noarch
 
